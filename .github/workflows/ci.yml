@@ -28,12 +28,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: install dependencies
-        run: sh create_python_env.sh
-       
-      - name: list folder contents
-        run: ls
-
       # Runs a single command using the runners shell
       - name: Test
         run: pytest

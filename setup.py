@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="simplecalc",
-    version="0.0.1",
+    version="0.0.2",
     author="Dwarakanath Jothi",
     author_email="dwarak91@github.com",
     description="An application that performs simple arithmatic calculation",

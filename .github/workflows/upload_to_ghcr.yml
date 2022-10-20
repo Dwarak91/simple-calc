@@ -33,4 +33,4 @@ jobs:
         run: echo ${{ secrets.cr_pat }} | docker login docker.pkg.github.com -u ${{github.actor}} --password-stdin
         
       - name: Push to GHCR
-        run: docker push ghcr.io/dwarak91/mylocaldevcontainer
+        run: docker push ghcr.io/Dwarak91/simple-calc:latest

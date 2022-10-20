@@ -29,11 +29,11 @@ jobs:
       - name: Build docker images
         run: docker build . -t local -f .devcontainer/Dockerfile
         
-      - name: Run Test
-        run: docker run -w /code local pytest
+      - name: Docker tag
+        run: docker tag local ghcr.io/dwarak91/mylocaldevcontainer:1
         
       - name: Log into registry
         run: echo ${{ secrets.cr_pat }} | docker login docker.pkg.github.com -u ${{github.actor}} --password-stdin
         
       - name: Push to GHCR
-        run: docker push local
+        run: docker push ghcr.io/dwarak91/mylocaldevcontainer:1

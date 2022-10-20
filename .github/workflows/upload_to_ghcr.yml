@@ -33,7 +33,7 @@ jobs:
 #         run: docker run -w /code local pytest
         
       - name: Log into registry
-        run: docker login ghcr.io -u ${{github.actor}} -p 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
+        run: docker login ghcr.io -u ${{github.actor}} -p ${{ secrets.cr_pat }}
         
       - name: Push to GHCR
         run: docker push local

@@ -27,10 +27,10 @@ jobs:
       - uses: actions/checkout@v3
         
       - name: Build docker images
-        run: docker build . -t dwarak91/simple-calc:latest -f .devcontainer/Dockerfile
+        run: docker build . -t dwarak91/simplecalc:latest -f .devcontainer/Dockerfile
         
       - name: Log into registry
         run: echo ${{ secrets.cr_pat }} | docker login docker.pkg.github.com -u ${{github.actor}} --password-stdin
         
       - name: Push to GHCR
-        run: docker push dwarak91/simple-calc:latest
+        run: docker push dwarak91/simplecalc:latest

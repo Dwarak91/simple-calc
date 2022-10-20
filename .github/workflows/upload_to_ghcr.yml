@@ -27,10 +27,7 @@ jobs:
       - uses: actions/checkout@v3
         
       - name: Build docker images
-        run: docker build . -t local -f .devcontainer/Dockerfile
-        
-      - name: Docker tag
-        run: docker tag local ghcr.io/dwarak91/mylocaldevcontainer:1
+        run: docker build . -t ghcr.io/dwarak91/mylocaldevcontainer:1 -f .devcontainer/Dockerfile
         
       - name: Log into registry
         run: echo ${{ secrets.cr_pat }} | docker login docker.pkg.github.com -u ${{github.actor}} --password-stdin

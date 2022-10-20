@@ -33,7 +33,7 @@ jobs:
         run: docker run -w /code local pytest
         
       - name: Log into registry
-        run: echo "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" | docker login ghcr.io -u ${{github.actor}} --password-stdin
+        run: echo "Vihaan@Jul23" | docker login ghcr.io -u ${{github.actor}} --password-stdin
         
       - name: Push to GHCR
         run: docker push local

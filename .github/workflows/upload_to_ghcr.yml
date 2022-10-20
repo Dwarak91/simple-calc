@@ -24,13 +24,13 @@ jobs:
     steps:
         
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#       - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         
-#       - name: Build docker images
-#         run: docker build . -t local -f .devcontainer/Dockerfile
+      - name: Build docker images
+        run: docker build . -t local -f .devcontainer/Dockerfile
         
-#       - name: Run Test
-#         run: docker run -w /code local pytest
+      - name: Run Test
+        run: docker run -w /code local pytest
         
       - name: Log into registry
         run: echo ${{ secrets.cr_pat }} | docker login docker.pkg.github.com -u ${{github.actor}} --password-stdin

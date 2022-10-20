@@ -24,16 +24,16 @@ jobs:
     steps:
         
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+#       - uses: actions/checkout@v3
         
-      - name: Build docker images
-        run: docker build . -t local -f .devcontainer/Dockerfile
+#       - name: Build docker images
+#         run: docker build . -t local -f .devcontainer/Dockerfile
         
-      - name: Run Test
-        run: docker run -w /code local pytest
+#       - name: Run Test
+#         run: docker run -w /code local pytest
         
       - name: Log into registry
-        run: echo "Vihaan@Jul23" | docker login ghcr.io -u ${{github.actor}} --password-stdin
+        run: export CR_PAT=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 ; echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
         
       - name: Push to GHCR
         run: docker push local
